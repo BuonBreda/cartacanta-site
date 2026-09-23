@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://buonbreda.github.io/cartacanta-site/sitemap.xml
