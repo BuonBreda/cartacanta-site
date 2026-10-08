@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pagina non trovata</title>
+<script>
+  // Un indirizzo sbagliato dentro la cartella di un'app porta alla pagina di quell'app, non a
+  // un vicolo cieco: la scheda App Store di Fantaschedina ha puntato per un po' a
+  // «…/fantaschedina/http://», e una scheda pubblicata non si corregge senza una nuova versione.
+  (function () {
+    var apps = ["alla-romana", "decumanus", "fagocita", "fantaschedina", "ora-daria",
+                "quantobasta", "sgocciola", "regole", "press"];
+    var parts = location.pathname.split("/").filter(Boolean);   // ["cartacanta-site", "<app>", …]
+    var app = parts[1];
+    if (parts.length > 2 && apps.indexOf(app) !== -1) {
+      location.replace("/" + parts[0] + "/" + app + "/");
+    }
+  })();
+</script>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; line-height: 1.6; }
+  h1 { font-family: ui-serif, Georgia, serif; }
+  .muted { opacity: .7; font-size: .9em; }
+</style>
+</head>
+<body>
+
+<h1>Pagina non trovata</h1>
+<p>Questo indirizzo non esiste. Le pagine di supporto e privacy di tutte le app partono da
+<a href="/cartacanta-site/">qui</a>.</p>
+<p class="muted">This page doesn't exist. Support and privacy pages for every app start
+<a href="/cartacanta-site/">here</a>.</p>
+
+</body>
+</html>
